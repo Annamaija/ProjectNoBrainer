@@ -48,23 +48,31 @@ public class EnemyController : MonoBehaviour
             //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); //MoveTowards(from, to, speed)
             rBody.MovePosition(Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime));
         }
-        if (hit >= 5) 
+        if (hit >= 5)
         {
             gate.GetComponent<GateController>().EnemyWins();
         }
     }
-    
-    //When enemy hits player
-    void OnTriggerEnter2D(Collider2D collider){
-        if (collider.gameObject.tag == "Obstacle") //Obstacle check
-        {
-            rBody.AddForce(-transform.up * thrust);
-        }
 
+    //When enemy hits player
+    void OnTriggerEnter2D(Collider2D collider)
+    {
         if (collider.gameObject.tag == "Player") //Player check
-        { 
+        {
             Debug.Log("HIT " + (hit += 1));
-            rBody.AddForce(-transform.up * thrust);
+
+            float x = transform.position.x * Mathf.Sin(Time.time * .1f) * .1f;
+            float y = transform.position.y;
+            float z = transform.position.z;
+
+            enemy.transform.position = new Vector3(x, y, z);
+        }
+    }
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Obstacle") //Player check
+        {
+            Debug.Log("HIT WALL");
         }
     }
 }
