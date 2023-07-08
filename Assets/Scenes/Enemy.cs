@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject player; //Player reference
     public GameObject enemy; //Enemy reference
+    public GameObject gate; // Gate reference
+
     public float speed; //Enemy's movement speed
     public float distance; //Distance that enemy will stop moving from player
     public float thrust; //Keeps enemy from going through player
@@ -47,7 +49,7 @@ public class Enemy : MonoBehaviour
         }
         if (hit >= 5) 
         {
-            EnemyWins();
+            gate.GetComponent<Gate>().EnemyWins();
         }
     }
     
@@ -57,11 +59,5 @@ public class Enemy : MonoBehaviour
             Debug.Log("HIT " + (hit += 1));
             rBody.AddForce(-transform.up * thrust);
         }
-    }
-
-    public void EnemyWins()
-    {
-        player.SetActive(false);
-        isfollowing = false;
     }
 }
