@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hand : MonoBehaviour
+public class HandController : MonoBehaviour
 {
     public GameObject hand;
     public GameObject gate;
@@ -40,6 +40,6 @@ public class Hand : MonoBehaviour
         Debug.Log("Player has collected missing hand.");
         hand.SetActive(false);
         gate.SetActive(true);
-        enemy.GetComponent<Enemy>().EnemyWakeUp();
+        enemy.GetComponent<EnemyController>().EnemyWakeUp();
     }
 }

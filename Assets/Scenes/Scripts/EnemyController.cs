@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     Rigidbody2D rBody;
 
@@ -45,17 +45,24 @@ public class Enemy : MonoBehaviour
         // Enemy slows down movement when close to player
         if (Vector2.Distance(transform.position, target.position) > distance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); //MoveTowards(from, to, speed)
+            //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); //MoveTowards(from, to, speed)
+            rBody.MovePosition(Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime));
         }
         if (hit >= 5) 
         {
-            gate.GetComponent<Gate>().EnemyWins();
+            gate.GetComponent<GateController>().EnemyWins();
         }
     }
     
     //When enemy hits player
     void OnTriggerEnter2D(Collider2D collider){
-        if (collider.gameObject.tag == "Player"){
+        if (collider.gameObject.tag == "Obstacle") //Obstacle check
+        {
+            rBody.AddForce(-transform.up * thrust);
+        }
+
+        if (collider.gameObject.tag == "Player") //Player check
+        { 
             Debug.Log("HIT " + (hit += 1));
             rBody.AddForce(-transform.up * thrust);
         }
