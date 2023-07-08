@@ -273,7 +273,7 @@ MonoBehaviour:
   player: {fileID: 2062999547}
   enemy: {fileID: 57792417}
   gate: {fileID: 117482602}
-  speed: 3.5
+  speed: 10
   distance: 1
   thrust: 10
 --- !u!212 &57792421
@@ -1916,8 +1916,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824950626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.53, y: 3.33, z: 0}
-  m_LocalScale: {x: 8.058506, y: 0.7247204, z: 1}
+  m_LocalPosition: {x: -4.53, y: 3.0322, z: 0}
+  m_LocalScale: {x: 8.058506, y: 0.12912083, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 807109863}
@@ -2160,8 +2160,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857944000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5836, y: 1.19, z: 0}
-  m_LocalScale: {x: 8.94495, y: 0.99065167, z: 1}
+  m_LocalPosition: {x: -1.5836, y: 0.7681, z: 0}
+  m_LocalScale: {x: 8.94495, y: 0.14691365, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 807109863}
@@ -4167,8 +4167,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086571033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2265, y: 3.3483, z: 0}
-  m_LocalScale: {x: 1.3173385, y: 3.5332932, z: 1}
+  m_LocalPosition: {x: 2.8552, y: 3.3483, z: 0}
+  m_LocalScale: {x: 0.060070634, y: 3.5332932, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 807109863}

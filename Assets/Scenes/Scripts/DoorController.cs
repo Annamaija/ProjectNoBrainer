@@ -16,12 +16,6 @@ public class DoorController : MonoBehaviour
         Debug.Log("Open sesamee");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnTriggerEnter2D(Collider2D collider)
     {
          Debug.Log("Door switch was hit");

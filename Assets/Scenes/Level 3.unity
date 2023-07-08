@@ -702,7 +702,7 @@ MonoBehaviour:
   player: {fileID: 1186344210}
   enemy: {fileID: 256520157}
   gate: {fileID: 97197689}
-  speed: 3.5
+  speed: 10
   distance: 1
   thrust: 10
 --- !u!212 &256520161
@@ -2324,9 +2324,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1186344210}
-  enemy: {fileID: 729088507}
+  enemy: {fileID: 256520157}
   gate: {fileID: 97197689}
-  speed: 3.5
+  speed: 10
   distance: 1
   thrust: 10
 --- !u!212 &729088511
