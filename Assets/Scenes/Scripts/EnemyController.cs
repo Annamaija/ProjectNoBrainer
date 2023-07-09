@@ -14,12 +14,17 @@ public class EnemyController : MonoBehaviour
     public float distance; //Distance that enemy will stop moving from player
     public float thrust; //Keeps enemy from going through player
 
+    public Animator myAnim;
+
     private Transform target; //Target that enemy follows
     private int hit = 0; //Amount of times enemy has hit player
     bool isfollowing;
 
     private void Start()
     {
+        //myAnim = GetComponent<Animator>(); // Controller plays sleep at the start
+        Debug.Log("Enemy sleeps");
+        myAnim.Play("dog_sleep-animation");
         isfollowing = false;
     }
     private void Update()
@@ -36,14 +41,14 @@ public class EnemyController : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         Debug.Log("Enemy starts moving");
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); //Enemy targets player
+        myAnim.Play("dog_runs_animation");
         isfollowing = true;
     }
 
     public void EnemyFollow()
     {
-
-        // Enemy slows down movement when close to player
-        if (Vector2.Distance(transform.position, target.position) > distance)
+            // Enemy slows down movement when close to player
+            if (Vector2.Distance(transform.position, target.position) > distance)
         {
             //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); //MoveTowards(from, to, speed)
             rBody.MovePosition(Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime));
