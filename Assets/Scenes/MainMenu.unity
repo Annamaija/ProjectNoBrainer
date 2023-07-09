@@ -548,12 +548,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Annamaija - Dog AI
+  m_Text: 'Annamaija - Dog AI, Level Design
 
-    OAT - Player movement, menus & UI
+    OAT - Player Movement, Menus & UI
+    Art
 
-    Juha Pudassalo
-    - Game graphic artist, SFX'
+    Juha Pudassalo - Game Graphic Artist, SFX'
 --- !u!222 &371742705
 CanvasRenderer:
   m_ObjectHideFlags: 0
