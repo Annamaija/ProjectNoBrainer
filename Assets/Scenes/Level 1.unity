@@ -3377,6 +3377,9 @@ MonoBehaviour:
   player: {fileID: 381148275}
   current: {fileID: 102900000, guid: 3428dc4bb2e2b9f4e94012d899ad58fc, type: 3}
   nextLv: {fileID: 102900000, guid: 183b1e9c050725446ba12852dbbd847d, type: 3}
+  soundLV: {fileID: 8300000, guid: 417211bf731e86349ace5455edc20c51, type: 3}
+  soundWin: {fileID: 8300000, guid: e5930ad5a60cee844a3533a933c8ddee, type: 3}
+  soundLose: {fileID: 8300000, guid: fe79aba9a762a214f9b585904860ef30, type: 3}
 --- !u!1 &1051343903
 GameObject:
   m_ObjectHideFlags: 0
