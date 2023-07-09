@@ -10,6 +10,7 @@ public class PlayerController2 : MonoBehaviour
     public LayerMask whatStopsMovement;
 
     public Animator myAnim;
+    public AudioClip sound;
 
     bool movement;
 
@@ -23,11 +24,14 @@ public class PlayerController2 : MonoBehaviour
 
     public void PlayerWakeUp()
     {
+        AudioSource.PlayClipAtPoint(sound, transform.position);
         movement = true;
     }
     // Update is called once per frame
     void Update()
     {
+        playerMoves();
+
         if (movement == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
@@ -40,7 +44,6 @@ public class PlayerController2 : MonoBehaviour
                     if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, whatStopsMovement))
                     {
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
-                        playerMoves();
                     }
                 }
 
@@ -49,7 +52,6 @@ public class PlayerController2 : MonoBehaviour
                     if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, whatStopsMovement))
                     {
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
-                        playerMoves();
                     }
                 }
             }

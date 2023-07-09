@@ -6,6 +6,7 @@ public class DoorController : MonoBehaviour
 {
     public GameObject door;
     public GameObject dSwitch;
+
     SpriteRenderer sprite;
 
     // Start is called before the first frame update

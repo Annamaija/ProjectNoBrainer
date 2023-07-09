@@ -10,6 +10,8 @@ public class GateController: MonoBehaviour
     public GameObject lose; // Gameover Panel
     public GameObject win; // Win Panel
 
+    public AudioClip sound;
+
     private void Start()
     {
         gate.SetActive(false);
@@ -28,6 +30,7 @@ public class GateController: MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(sound, transform.position);
             win.SetActive(true);
             enemy.SetActive(false);
             player.SetActive(false);

@@ -8,6 +8,8 @@ public class HandController : MonoBehaviour
     public GameObject gate;
     public GameObject enemy;
 
+    public AudioClip sound;
+
     // User Inputs
     public float degreesPerSecond = 15.0f;
     public float amplitude = 0.2f;
@@ -37,6 +39,7 @@ public class HandController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        AudioSource.PlayClipAtPoint(sound, transform.position);
         Debug.Log("Player has collected missing hand.");
         hand.SetActive(false);
         gate.SetActive(true);
