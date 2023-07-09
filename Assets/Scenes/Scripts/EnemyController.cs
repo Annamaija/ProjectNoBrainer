@@ -49,10 +49,10 @@ public class EnemyController : MonoBehaviour
     {
             // Enemy slows down movement when close to player
             if (Vector2.Distance(transform.position, target.position) > distance)
-        {
-            //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); //MoveTowards(from, to, speed)
-            rBody.MovePosition(Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime));
-        }
+            {
+               transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); //MoveTowards(from, to, speed)
+            //rBody.MovePosition(Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime));
+            }
         if (hit >= 5)
         {
             gate.GetComponent<GateController>().EnemyWins();
@@ -66,11 +66,11 @@ public class EnemyController : MonoBehaviour
         {
             Debug.Log("HIT " + (hit += 1));
 
-            float x = transform.position.x * Mathf.Sin(Time.time * .1f) * .1f;
-            float y = transform.position.y;
-            float z = transform.position.z;
+            //float x = transform.position.x * Mathf.Sin(Time.time * .1f) * .1f;
+            //float y = transform.position.y;
+            //float z = transform.position.z;
 
-            enemy.transform.position = new Vector3(x, y, z);
+            //enemy.transform.position = new Vector3(x, y, z);
         }
     }
     void OnTriggerStay2D(Collider2D collider)

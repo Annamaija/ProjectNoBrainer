@@ -8,6 +8,7 @@ public class PanelController : MonoBehaviour
     public GameObject start;
     public GameObject lose;
     public GameObject win;
+    public GameObject player;
 
     public Object current;
     public Object nextLv;
@@ -25,6 +26,7 @@ public class PanelController : MonoBehaviour
             {
                 start.SetActive(false);
                 Debug.Log(current + " starts!");
+                player.GetComponent<PlayerController2>().PlayerWakeUp();
             }
 
             else if (lose.activeSelf)
